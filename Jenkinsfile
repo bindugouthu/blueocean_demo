@@ -6,6 +6,7 @@ pipeline {
         echo 'Placeholder'
         sh '''./jenkins/build.sh
 ls -l ./jenkins/build.sh '''
+        archiveArtifacts(artifacts: 'build.tar.gz', fingerprint: true)
       }
     }
 
