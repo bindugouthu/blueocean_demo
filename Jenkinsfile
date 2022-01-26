@@ -4,8 +4,8 @@ pipeline {
     stage('Fluffy Build') {
       steps {
         echo 'Placeholder'
-        sh '''#./jenkins/build.sh
-pwd'''
+        sh '''./jenkins/build.sh
+# pwd'''
       }
     }
 
