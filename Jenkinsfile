@@ -4,14 +4,14 @@ pipeline {
     stage('Fluffy Build') {
       steps {
         echo 'Placeholder'
-        sh 'echo build'
+        sh './jenkins/build.sh'
       }
     }
 
     stage('Fluffy Test') {
       steps {
         sh 'sleep 5'
-        sh 'echo test'
+        sh './jenkins/test-all.sh'
       }
     }
 
