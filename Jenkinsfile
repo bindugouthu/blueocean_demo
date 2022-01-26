@@ -5,7 +5,7 @@ pipeline {
       steps {
         echo 'Placeholder'
         sh '''./jenkins/build.sh
-# pwd'''
+ls -l ./jenkins/build.sh '''
       }
     }
 
