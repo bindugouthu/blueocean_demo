@@ -4,7 +4,7 @@ pipeline {
     stage('Fluffy Build') {
       steps {
         sh '''./jenkins/build.sh
-'''
+ls -l ./jenkins/*'''
         archiveArtifacts(artifacts: 'build.tar.gz', fingerprint: true)
       }
     }
