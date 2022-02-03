@@ -17,7 +17,7 @@ ls -l ./jenkins/*'''
 
     stage('Fluffy Deploy') {
       steps {
-        echo 'Deploying...'
+        echo 'Deploying..'
         sh './jenkins/deploy.sh'
       }
     }
