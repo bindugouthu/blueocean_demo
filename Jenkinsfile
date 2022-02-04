@@ -22,21 +22,21 @@ ls -l ./jenkins/*'''
         stage('frontend') {
           steps {
             sh './jenkins/test-frontend.sh'
-            junit './reports/frontend-test-reports/'
+            junit(testResults: './reports/frontend-test-reports/', allowEmptyResults: true)
           }
         }
 
         stage('performance') {
           steps {
             sh './jenkins/test-performance.sh'
-            junit './reports/performance-test-reports/'
+            junit(testResults: './reports/performance-test-reports/', allowEmptyResults: true)
           }
         }
 
         stage('static') {
           steps {
             sh './jenkins/test-static.sh'
-            junit './reports/static-test-reports/'
+            junit(testResults: './reports/static-test-reports/', allowEmptyResults: true)
           }
         }
 
