@@ -12,6 +12,7 @@ ls -l ./jenkins/*'''
     stage('Fluffy Test') {
       steps {
         sh './jenkins/test-all.sh'
+        junit(testResults: '**/test-reports/**/*', allowEmptyResults: true)
       }
     }
 
