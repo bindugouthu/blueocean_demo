@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "testing"
 mkdir -p ./reports/test-reports/
 mkdir -p ./reports/non-test-reports/
