@@ -11,9 +11,35 @@ ls -l ./jenkins/*'''
     }
 
     stage('Fluffy Test') {
-      steps {
-        sh './jenkins/test-all.sh'
-        junit(testResults: '**/test-reports/**/*', allowEmptyResults: true)
+      parallel {
+        stage('backend') {
+          steps {
+            sh './jenkins/test-backend.sh'
+            junit(testResults: './reports/backend-test-reports/**/*', allowEmptyResults: true)
+          }
+        }
+
+        stage('frontend') {
+          steps {
+            sh './jenkins/test-frontend.sh'
+            junit './reports/frontend-test-reports/'
+          }
+        }
+
+        stage('performance') {
+          steps {
+            sh './jenkins/test-performance.sh'
+            junit './reports/performance-test-reports/'
+          }
+        }
+
+        stage('static') {
+          steps {
+            sh './jenkins/test-static.sh'
+            junit './reports/static-test-reports/'
+          }
+        }
+
       }
     }
 
