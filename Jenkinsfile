@@ -6,6 +6,7 @@ pipeline {
         sh '''./jenkins/build.sh
 ls -l ./jenkins/*'''
         archiveArtifacts(artifacts: 'build.tar.gz', fingerprint: true)
+        echo '${my_env_var}'
       }
     }
 
@@ -23,5 +24,8 @@ ls -l ./jenkins/*'''
       }
     }
 
+  }
+  environment {
+    my_env_var = '"my_env_value"'
   }
 }
