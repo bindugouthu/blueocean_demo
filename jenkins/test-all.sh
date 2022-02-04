@@ -6,3 +6,4 @@ mkdir -p ./more-reports/non-test-reports/
 
 touch ./reports/test-reports/ut-1.xml
 touch ./more-reports/test-reports/ut-1.xml
+touch ./more-reports/test-reports/ut-1.txt
